@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:23 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="/css/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/css/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/css/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+
+
+    <script>
+        // $(function () {
+        //     $('#blogList').DataTable({
+        //         'processing': true,
+        //         'serverSide': true,
+        //         'searching': false,
+        //         'ordering': false,
+        //         "ajax": {
+        //             'url': '/admin/fetchBlogList',
+
+        //         },
+        //         'dataSrc': "",
+        //         'columns': [{
+        //             'data': 'blog_Title'
+
+        //         }, {
+        //             'data': 'action'
+        //         }
+
+        //         ]
+        //     });
+
+        // });
+
+        function fetchBlog(){  
+
+        $.ajax({
+            url: '/admin/fetchBlogList',
+            method: 'GET',
+            success: function (data) {
+                $('#blogList').html('')
+                data.forEach((d) => {
+                    $('#blogList').append(`
+                    <tr>
+
+
+<td>
+    ${d.blog_Title}
+</td>
+
+<td>
+    ${d.action}
+</td>
+</tr>
+           
+                    
+                    `)
+                })
+                console.log(data)
+            }
+        })
+
+    }
+        function resetForm() {
+            const editorData = editor.getData();
+            $('#blog_Title').val('')
+                    editor.setData( '' )
+        }
+
+        function addBlog(){
+            const editorData = editor.getData();
+            console
+            data = {
+                'blog_Title': $('#blog_Title').val(),
+                'blog_Content': editorData
+            }
+            $.ajax({
+                url: '/admin/createBlog',
+                method: 'POST',
+                data: data,
+                success: function (res) {
+                    fetchBlog()
+                    $('#blog_Title').val('')
+                    editor.setData( '' )
+                    console.log(res)
+                }
+            })
+        }
+       function editblog(id){  
+
+        const editorData = editor.getData();
+        $('#blog_Title').val('');
+        editor.setData( '' )
+        $.ajax({
+                url: '/admin/editBlog?id='+id,
+                method: 'get',
+                success: function (res) {
+                    
+                    $('#blog_Title').val(res[0].blog_Title)
+                    editor.setData( res[0].blog_Content )
+                    $('#AddBlog').val('Update')
+                    $('#AddBlog').attr('class', 'btn btn-success')
+                    $('#AddBlog').attr('onclick',`updateBlog(${res[0].blog_id})`)
+                    console.log(res)
+                }
+            })
+
+       }
+
+      function updateBlog(id){  
+
+        const editorData = editor.getData();
+            console
+            data = {
+                'blog_id' : id,
+                'blog_Title': $('#blog_Title').val(),
+                'blog_Content': editorData
+            }
+            $.ajax({
+                url: '/admin/updateBlog',
+                method: 'POST',
+                data: data,
+                success: function (res) {
+                    fetchBlog()
+                    $('#blog_Title').val('')
+                    editor.setData( '' )
+                    $('#AddBlog').val('Add Blog')
+                    $('#AddBlog').attr('class', 'btn btn-primary')
+                    $('#AddBlog').attr('onclick',`addBlog()`)
+                    
+                }
+            })
+        }
+
+       
+
+       function deleteBlog(id){ 
+        $.ajax({
+                url: '/admin/deleteBlog?id='+id,
+                method: 'get',
+                success: function (res) {
+                    
+                    fetchBlog()
+                    console.log(res)
+                }
+            })
+
+        }
+
+        //Method For Searching Records In The List
+        // function searchData() {
+        //     $('#listAllCostCenter').DataTable().draw();
+        // }
+        //Deleting the Country
+
+        // function deleteBlog(id) {
+        //     swal.fire({
+        //         title: "Are you sure want to Delete?",
+        //         text: "Once Deleted,Can't revert back !",
+        //         type: "warning",
+        //         showCancelButton: true,
+        //         confirmButtonColor: '#d33',
+        //         cancelButtonColor: '#e7b63a',
+        //         confirmButtonText: 'Delete',
+        //         reverseButtons: true
+
+        //     }).then((result) => {
+        //         if (result.value) {
+        //             $.ajax({
+        //                 type: "GET",
+        //                 url: "/admin/deleteBlog?id=" + id,
+        //                 success: function (response) {
+        //                     console.log(response);
+        //                     //return false;
+        //                     if (response.message == "success") {
+        //                         swal({
+        //                             title: "Record Deleted Successfully.",
+        //                             type: "success"
+        //                         }).then(function () {
+        //                             location.reload();
+        //                         })
+
+
+        //                     } else {
+        //                         swal({
+        //                             title: 'Unsuccess',
+        //                             text: response.code
+        //                         })
+        //                     }
+        //                 },
+        //                 error: function (data) {
+
+        //                 }
+        //             })
+        //         }
+
+        //     });
+        // }
+
+    </script>
+
+</head>
+
+
+<body data-sidebar="dark" onload="fetchBlog()">
+
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+  
+                    <%-include('header')-%>
+
+
+          
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <%-include('sidebar')-%>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+
+
+
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="page-title-box">
+                                <h4>Manage Blogs</h4>
+                                <ol class="breadcrumb m-0">
+
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Manage Blogs</a></li>
+                                    <li class="breadcrumb-item active">Manage Blogs</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="page-title-box">
+                                <h4>Add Blogs</h4>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end page title -->
+
+
+
+
+
+                    <div class="row">
+
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Blog List</h4>
+
+                                    <div class="table-responsive">
+                                        <table
+                                            class="table align-middle table-centered table-vertical table-nowrap mb-1">
+
+                                            <thead>
+                                                <tr>
+
+
+                                                    <td>
+                                                        Blog Title
+                                                    </td>
+
+                                                    <td>
+                                                        Action
+                                                    </td>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="blogList">
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="blogTitle">Blog Title</label>
+                                    <input type="text" class="form-control" id="blog_Title"
+                                        placeholder="Enter blog title">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="blogTitle">Blog Content</label>
+                                    <textarea type="text" id="editor1" onfocus="ckedit(this)" name="editor1" rows="20"
+                                        name="blog_Content" class="form-control"></textarea>
+                                </div>
+                                <input type="button" id="AddBlog" onclick="addBlog()" class="btn btn-primary" value="Add Blog">
+                                <button type="button" onclick="resetForm()" class="btn btn-danger">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <!-- Right bar overlay-->
+
+  <!-- JAVASCRIPT -->
+  <script src="/assets/libs/jquery/jquery.min.js"></script>
+  <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+  <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+  <script src="/assets/libs/node-waves/waves.min.js"></script>
+  <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+  <script src="/js/vendor/fontawesome-all.min.js"></script>
+  <!--Morris Chart-->
+  <!-- <script src="/assets/libs/morris.js/morris.min.js"></script> -->
+  <script src="/assets/libs/raphael/raphael.min.js"></script>
+
+  <script src="/assets/js/pages/dashboard.init.js"></script>
+
+  <script src="/assets/js/app.js"></script>
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- DataTables -->
+    <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/bower_components/ckeditor5/build/ckeditor.js"></script>
+    <script src="/javascripts/ckeditor.js"></script>
+ 
+
+
+
+
+
+
+
+</body>
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:47 GMT -->
+
+</html>

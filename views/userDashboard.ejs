@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:23 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="/css/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link herf="/assets/css/icons.min.css" rel="stylesheet" />
+    <!-- App Css-->
+    <link href="/css/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- <link herf="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"
+        type="text/css"> -->
+
+
+    <!-- <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -75px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style> -->
+
+
+</head>
+
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <%-include('header')-%>
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Main</li>
+
+                            <li>
+                                <a href="/user/dashboard" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span class="badge rounded-pill bg-primary float-end">2</span>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/common/blog" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span class="badge rounded-pill bg-primary float-end">2</span>
+                                    <span>Blogs</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="page-title-box">
+                                    <h4>Dashboard</h4>
+                                    <ol class="breadcrumb m-0">
+
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-cube-outline float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Referals</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%= result[0].totalRef %>
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-buffer float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Points</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%= result[0].totalPoints %>
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-tag-text-outline float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Generation 1</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%= result[0].gen1 %>
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-briefcase-check float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Gen 2 to 5</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%= result[0].gen2to5 %>
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <!-- end row -->
+
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-xl-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Your Referal URL</h4>
+                                        <!-- Target -->
+                                        <div class="row ">
+                                            <div class="col-12 d-flex justify-content-center">
+                                        <a id="linkShare" href="<%= result[0].refurl %>"><%= result[0].refurl %></a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 d-flex justify-content-center">
+                                        <div id="share"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+
+
+                        </div>
+                        <!-- container-fluid -->
+                    </div>
+                    <!-- End Page-content -->
+
+                    <%-include('footer')-%>
+                </div>
+                <!-- end main content-->
+
+            </div>
+            <!-- END layout-wrapper -->
+
+            <!-- Right Sidebar -->
+            <div class="right-bar">
+                <div data-simplebar class="h-100">
+
+                    <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                        <h5 class="m-0 me-2">Settings</h5>
+
+                        <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                            <i class="mdi mdi-close noti-icon"></i>
+                        </a>
+                    </div>
+
+                    <!-- Settings -->
+                    <hr class="mt-0" />
+                    <h6 class="text-center mb-0">Choose Layouts</h6>
+
+                    <div class="p-4">
+                        <div class="mb-2">
+                            <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch"
+                                checked />
+                            <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                        </div>
+
+                        <div class="mb-2">
+                            <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
+                                data-bsStyle="assets/css/bootstrap-dark.min.css"
+                                data-appStyle="assets/css/app-dark.min.css" />
+                            <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                        </div>
+
+                        <div class="mb-2">
+                            <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+                        </div>
+                        <div class="form-check form-switch mb-5">
+                            <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch"
+                                data-appStyle="assets/css/app-rtl.min.css" />
+                            <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                        </div>
+
+
+                    </div>
+
+                </div> <!-- end slimscroll-menu-->
+            </div>
+            <!-- /Right-bar -->
+
+
+
+
+
+            <!-- Right bar overlay-->
+            <div class="rightbar-overlay"></div>
+
+
+            <script src="/js/vendor/fontawesome-all.min.js"></script>
+            <!-- JAVASCRIPT -->
+            <script src="/assets/libs/jquery/jquery.min.js"></script>
+            <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+            <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="/assets/libs/node-waves/waves.min.js"></script>
+            <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+            <!--Morris Chart-->
+            <!-- <script src="/assets/libs/morris.js/morris.min.js"></script>
+            <script src="/assets/libs/raphael/raphael.min.js"></script> -->
+
+            <!-- <script src="/assets/js/pages/dashboard.init.js"></script> -->
+
+            <script src="/assets/js/app.js"></script>
+
+<!-- 
+            <script>
+                function myFunction() {
+                  var copyText = document.getElementById("myInput");
+                  copyText.select();
+                  copyText.setSelectionRange(0, 99999);
+                  document.execCommand("copy");
+                  
+                  var tooltip = document.getElementById("myTooltip");
+                  tooltip.innerHTML = "Copied"
+                }
+                
+                function outFunc() {
+                  var tooltip = document.getElementById("myTooltip");
+                  tooltip.innerHTML = "Copy to clipboard";
+                }
+                </script> -->
+
+
+                <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+
+                <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    
+    
+                <script>
+
+$(document).ready(function(){
+                   
+    
+                    $("#share").jsSocials({
+                        text: 'Sign Up on KARWAT click here',
+                        url: $('#linkShare').attr('href'),
+                        
+                        showLabel: false,
+                        showCount: 'inside',
+                        shares: ["email", "twitter", "facebook", "linkedin", "whatsapp"]
+            
+                    });
+                })
+            
+                </script>
+</body>
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:47 GMT -->
+
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zxx">
+<!--<![endif]-->
+
+<head>
+  <!-- Basic metas
+    ======================================== -->
+  <meta charset="utf-8" />
+  <meta name="author" content="Axilweb" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Mobile specific metas
+    ======================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Page Title
+    ======================================== -->
+  <title>Kryptova</title>
+
+  <!-- links for favicon
+    ======================================== -->
+  <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="icon/favicon.ico" type="image/x-icon" />
+
+  <!-- Icon fonts
+    ======================================== -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/vendor/cryptowallet-argon.css" /> -->
+
+  <!-- css links
+    ======================================== -->
+  <!-- Bootstrap link -->
+  <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+
+  <!-- Slick slider -->
+  <link rel="stylesheet" type="text/css" href="css/vendor/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/vendor/slick-theme.css" />
+
+  <!-- Magnific popup -->
+  <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+  <!-- Responsive styling -->
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="sweetalert2.all.min.js"></script> -->
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" /> -->
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+  <!-- <script language="Javascript" src="jquery.js"></script> -->
+  <!-- <script type="text/JavaScript" src="state.js"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+  <style>
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+
+    .sign-with {
+      margin-top: 25px;
+      padding: 20px;
+    }
+
+    div#OR {
+      height: 30px;
+      width: 30px;
+      border: 1px solid #c2c2c2;
+      border-radius: 50%;
+      font-weight: bold;
+      line-height: 28px;
+      text-align: center;
+      font-size: 12px;
+      float: right;
+      position: absolute;
+      right: -16px;
+      top: 40%;
+      z-index: 1;
+      background: #dfdfdf;
+    }
+    #time{
+      color:red;
+    }
+  </style>
+</head>
+
+<!-- body starts
+============================================ -->
+
+<body>
+  <!-- Preloader -->
+  <div class="o-preloader">
+    <div class="o-preloader_inner"></div>
+  </div>
+
+  <div class="radial-bg radial-bg__banner"></div>
+  <!-- End of .radial-bg -->
+
+  <!-- navbar starts
+============================================ -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+
+        <img class=".optacity-1" src="images/brand-logo.png" alt="brand logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="toggler-icon-bar bar1"></span>
+        <span class="toggler-icon-bar bar2"></span>
+        <span class="toggler-icon-bar bar3"></span>
+      </button>
+      <!-- End of .navbar-toggler -->
+
+      <%-include('navbar')-%>
+
+    <!-- End of .container -->
+  </nav>
+  <!-- End of .navbar -->
+
+  <!-- banner starts
+============================================ -->
+  <section class="banner">
+    <div class="container">
+      <div class="banner-wrapper d-flex align-items-center">
+        <div class="banner-txt">
+          <h1>KARWT </h1>
+          <p>
+            The next generation ecommerce platform
+          </p>
+          <a class="btn" href="#">Whitepaper</a>
+          <a class="btn btn-play video-popup" href="https://www.youtube.com/watch?v=6HB2B1ptuvc">
+            <i class="icon-play-1"></i> Product Intro
+          </a>
+
+
+          <div class="container">
+
+          <h1>Upcoming Website</h1>
+<div id="clockdiv">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+           
+          
+          <h2 id="time"></h2>
+
+         
+</div>
+
+           <script>
+          $(function(){
+    var calcNewYear = setInterval(function(){
+        date_future = new Date(new Date().getFullYear() +1, 0, 1);
+        date_now = new Date();
+
+        seconds = Math.floor((date_future - (date_now))/2500);
+        minutes = Math.floor(seconds/60);
+        hours = Math.floor(minutes/60);
+        days = Math.floor(hours/24);
+        
+        hours = hours-(days*24);
+        minutes = minutes-(days*24*60)-(hours*60);
+        seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+});      
+          })
+         
+      
+          </script>
+           
+          
+        </div>
+        <!-- End of .banner-txt -->
+
+        <div class="img-container img-container__banner">
+          <img src="images/banner/home-banner.png" alt="home banner image" class="img-fluid ml-auto" />
+        </div>
+        <!-- End of .img-container -->
+      </div>
+      <!-- End of .banner-wrapper -->
+    </div>
+    <!-- End of .container -->
+  </section>
+  <!-- End of .banner -->
+
+  <!-- token-slider starts
+============================================ -->
+
+  <!-- End of .banner-slider -->
+
+  <!-- features starts
+============================================ -->
+  <section class="features">
+    <div class="radial-bg radial-bg__features"></div>
+    <!-- End of .radial-bg -->
+
+    <div class="container">
+      <div class="feature-wrapper">
+        <div class="feature-content section-padding">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="text-content">
+                <h2>
+                  Best Growing Company
+                </h2>
+                <p>
+                  As per name suggest, KARWT is a Sanskrit word which meant to be a (Market place). We
+                  are one of the unique market place
+                  in India which brings vendor & seller in one platform and that too SWADESHI Brands.
+                </p>
+                <!-- <a href="#" class="btn-link">Download White Paper
+                  <i class="icon-arrow-right-1"></i>
+                </a> -->
+              </div>
+              <!-- End of .text-content -->
+            </div>
+            <!-- End of .col-md-6 -->
+
+            <div class="col-md-6">
+              <div class="img-container">
+                <img src="images/feature-img/features-1.png" alt="feature image" />
+              </div>
+              <!-- End of .img-container -->
+            </div>
+            <!-- End of .col-md-6 -->
+          </div>
+          <!-- End of .row -->
+        </div>
+        <!-- End of .feature-content -->
+
+        <div class="feature-content section-padding">
+          <div class="row align-items-center">
+            <div class="col-md-6 order-md-2">
+              <div class="text-content">
+                <h2>What makes us different </h2>
+                <p>KARWT is a E-commerce platforms such as FLIPKART or AMAZON. The difference with
+                  FLIPKART or AMAZON is, KARWT pay B0NUS
+                  to users who sign up during pre-launch alone.
+
+                </p>
+                <p>We only need to use only KARWT after it smoothly and need to refer atleast 3 other
+                  users by our referral link and we
+                  will be eligible for B0NUS of them.
+
+                  KARWT in pre-launch until "*LAUNCH DATE".
+                  The users who join our network through your personal link will cause you to grow
+                  POINT. Each new member 5 generations
+                  deep cause you to grow by POINT 1.</p>
+                <!--
+                  <a href="#" class="btn-link">Download White Paper
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              -->
+              </div>
+              <!-- End of .text-content -->
+            </div>
+            <!-- End of .col-md-6 -->
+
+            <div class="col-md-6 order-md-1">
+              <div class="img-container">
+                <img src="images/feature-img/features-2.png" alt="feature image" />
+              </div>
+              <!-- End of .img-container -->
+            </div>
+            <!-- End of .col-md-6 -->
+          </div>
+          <!-- End of .row -->
+        </div>
+        <!-- End of .feature-content -->
+      </div>
+      <!-- End of .feature-wrapper -->
+    </div>
+    <!-- End of .container -->
+  </section>
+  <!-- End of .features -->
+
+  <!-- benefits-of-solution starts
+============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="benefits-of-solution section-padding">
+        <div class="section-heading text-center">
+          <h2>Benefits of Using Our Platform</h2>
+          <!-- <p>
+            Suspendisse ornare porta porta. In a aliquam est. Sed convallis
+            tortor et eleifend convallis. Suspendisse.
+          </p> -->
+        </div>
+        <!-- End of .section-heading -->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-clock-1"></i>
+              <h4>Best Referral Program</h4>
+              <p>
+                KARWT only dividing income by the amount of POINTS all members. Suppose that for MAY
+                month the rate per POINT INR ₹
+                10.00 and POINT you by 3000. This means KAWRT will pay you 3000 x 10.00 = INR ₹
+                30000.00! WoW
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-cloud"></i>
+              <h4>Win Win Situtation</h4>
+              <p>
+                Once the new USERS will create the community during pre-launch. 50% of profit will be
+                distributed to all the pre-launch
+                users & rest of the profit will go back to KARWT organization. Our primary motto as a
+                KARWT is to serve community &
+                spread the awareness of our brand and help our local vendors to assay their products..
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-chart-5"></i>
+              <h4>Its Completely Free</h4>
+              <p>
+                KARWT is FREE! YOU DO NOT NEED TO PAY a penny!
+                REGISTERED USERS ONLY *** BEFORE THE "*LAUNCH DATE". ONLY ENTITLED TO RECEIVE B0NUS
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-clock-1"></i>
+              <h4>NON-Profit organization</h4>
+              <p>
+                KARWT works only for the better of our society. We are here to promote welfare and trade
+                of indigenious products
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-box-2"></i>
+              <h4>Brief Example</h4>
+              <p>
+                1st.Generation 5 x 1 = 5 <br>
+                2nd. Generation 5 x 5 = 25 <br>
+                3rd. Generation 25 x 5 = 125 <br>
+                4th. Generation 125 x 5 = 625 <br>
+                5th.Generation 625 x 5 = 3125 <br>
+
+                YOU WILL RECEIVE MONTHLY PASSIVE INCOME from POINTS 3905 PER MONTH FOR LIFE
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+
+          <div class="col-md-6">
+            <div class="benefits-content">
+              <i class="icon-envelope"></i>
+              <h4>Life Long Benefits</h4>
+              <p>
+                KARWT WILL PROVIDE BENEFITS FOR LIFE ONLY TO THOSE WHO BECOME A MEMBER AND INTRODUCES NEW
+                MEMBERSHIP
+                MEMBERS BEFORE the date of launch "*LAUNCH DATE".
+                INCOME TO BE PAID TO YOUR NETWORK IN 5 Generations EVERY ONE YOU REFERRED, WOW a lot of
+                money....
+              </p>
+            </div>
+            <!-- End of inner-content -->
+          </div>
+          <!-- End of .col-md-6 -->
+        </div>
+        <!-- End of .row -->
+      </div>
+      <!-- End of .benefits-of-solution -->
+    </div>
+    <!-- End of .container -->
+  </section>
+  <!-- End of section -->
+
+  <!-- roadmap-to-success starts
+============================================ -->
+  <section class="section">
+    <div class="radial-bg radial-bg__roadmap"></div>
+    <!-- End of .radial-bg -->
+
+    <div class="container">
+      <div class="roadmap-to-success section-padding" id="roadmap">
+        <div class="section-heading text-center">
+          <h2>Roadmap to Success</h2>
+          <p>
+            Sed laoreet lorem tellus, id iaculis velit convallis sit amet.
+            Duis ultrices vulputate ullamcorper.
+          </p>
+        </div>
+        <!-- End of .section-heading -->
+      </div>
+      <!-- End of .roadmap-to-success -->
+    </div>
+    <!-- End of .container -->
+
+    <div class="roadmap-container">
+      <div class="row align-items-end no-gutters">
+        <div class="col-md roadmap-label l-1" title="Click to open">
+          <div class="text-content">
+            January, 2018
+            <span>Planning</span>
+          </div>
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Planning </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-2" title="Click to open">
+          <div class="text-content">
+            February, 2018
+            <span>Project Launch</span>
+          </div>
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Project Launch </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-3" title="Click to open">
+          <div class="text-content">
+            March, 2018
+            <span>Token Sale</span>
+          </div>
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Token Sale </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-4" title="Click to open">
+          <div class="text-content">
+            July, 2018
+            <span>Tier 1 Sold</span>
+          </div>
+
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Tier 1 Sold </a>
+                </h4>
+              </div>
+              <div class="card-body" title="Click to open">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-5" title="Click to open">
+          <div class="text-content">
+            December, 2018
+            <span>Tier 2 Sold</span>
+          </div>
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Tier 2 Sold </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-6" title="Click to open">
+          <div class="text-content">
+            May, 2019
+            <span>Production Start</span>
+          </div>
+
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Production Start </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+
+        <div class="col-md roadmap-label l-7" title="Click to open">
+          <div class="text-content">
+            June, 2019
+            <span>Project Live</span>
+          </div>
+
+          <div class="data">
+            <div class="line"></div>
+            <div class="card text-left">
+              <a class="img-container" href="blog-details.html">
+                <img src="images/roadmap/roadmap-1.jpg" alt="roadmap image" class="img-fluid" />
+              </a>
+              <div class="card-header">
+                <h4 class="mb-0">
+                  <a href="blog-details.html"> Project Live </a>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Morbi id sagittis felis. Vivamus eu tellus quis ex tincidunt
+                  euismod ut sed ligula. Ut tortor mi, lobortis ut mollis
+                  eget, pretium at mi.
+                </p>
+                <a href="blog-details.html" class="btn-link">Read Full Story
+                  <i class="icon-arrow-right-1"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End of .card -->
+          </div>
+          <!-- End of .data -->
+        </div>
+        <!-- End of .roadmap-label -->
+      </div>
+      <!-- End of .row -->
+
+      <svg class="roadmap-line" width="1920">
+        <defs>
+          <linearGradient id="linear-gradient" y1="42.22" x2="1920.75" y2="42.22"
+            gradientTransform="matrix(1, 0, 0, -1, 0, 82)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#3023ae" />
+            <stop offset="1" stop-color="#c86dd7" />
+          </linearGradient>
+        </defs>
+        <path class="roadmap-line-path" d="M -290 0 l2500 0" />
+      </svg>
+    </div>
+    <!-- End of .roadmap-container -->
+  </section>
+  <!-- End of .roadmap-to-success -->
+
+  <!-- crowdsale starts
+============================================ -->
+
+  <!-- End of .crowdsale -->
+
+  <!-- team starts
+============================================ -->
+
+  <!-- End of .team -->
+
+  <!-- latest-blog starts
+============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="latest-blog section-padding">
+        <div class="section-heading text-center">
+          <h2>Latest Blog Posts</h2>
+          <p>
+            Sed aliquet leo eget accumsan commodo. Phasellus commodo gravida
+            vestibulum. Aenean a semper neque, sit.
+          </p>
+        </div>
+        <!-- End of .section-heading -->
+
+        <div class="row">
+          <div class="col-lg-4 col-sm-6">
+            <a href="blog-details.html" class="img-card img-card__blog">
+              <div class="img-container">
+                <img src="images/blog/blog-1.jpg" alt="latest blog" />
+              </div>
+              <!-- End of .img-container -->
+              <h5>
+                <span>21 February 2018</span>
+                2018 Market Expansion for All Types of Virtual Currencies.
+              </h5>
+            </a>
+            <!-- End of .img-card -->
+          </div>
+          <!-- End of .col-md-4 -->
+
+          <div class="col-lg-4 col-sm-6">
+            <a href="blog-details.html" class="img-card img-card__blog">
+              <div class="img-container">
+                <img src="images/blog/blog-2.jpg" alt="latest blog" />
+              </div>
+              <!-- End of .img-container -->
+              <h5>
+                <span>3 January 2018</span>
+                Bitcoin Virtual Card Can be Used Anywhere from the World Now!
+              </h5>
+            </a>
+            <!-- End of .img-card -->
+          </div>
+          <!-- End of .col-md-4 -->
+
+          <div class="col-lg-4 col-sm-6">
+            <a href="blog-details.html" class="img-card img-card__blog">
+              <div class="img-container">
+                <img src="images/blog/blog-3.jpg" alt="latest blog" />
+              </div>
+              <!-- End of .img-container -->
+              <h5>
+                <span>15 December 2017</span>
+                Blockchain - the Most Secure Way to Regulate Cryptocurrency.
+              </h5>
+            </a>
+            <!-- End of .img-card -->
+          </div>
+          <!-- End of .col-md-4 -->
+        </div>
+        <!-- End of .row -->
+      </div>
+      <!-- End of .latest-blog -->
+    </div>
+    <!-- End of .container -->
+  </section>
+  <!-- End of .latest-blog -->
+
+  <!-- trusted-partners starts
+============================================ -->
+
+  <!-- End of .team-modal -->
+
+  <!-- footer starts
+============================================ -->
+  <footer class="footer">
+    <div class="radial-bg radial-bg__footer"></div>
+    <!-- End of .radial-bg -->
+    <div class="container">
+      <div class="page-footer">
+        <div class="footer-menu">
+          <div class="row">
+            <div class="col-md">
+              <a href="index.html" class="d-block">
+                <img src="images/footer-logo.png" alt="footer logo" />
+              </a>
+            </div>
+            <!-- End of .col -->
+
+            <div class="col-md">
+              <h5>Company</h5>
+              <ul class="footer-nav">
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                  <a href="ico-funding.html">ICO Funding</a>
+                </li>
+                <li>
+                  <a href="about.html">About</a>
+                </li>
+                <li>
+                  <a href="blog.html">Blog</a>
+                </li>
+              </ul>
+              <!-- End of .footer-nav -->
+            </div>
+            <!-- End of .col -->
+
+            <div class="col-md">
+              <h5>ICO Funding</h5>
+              <ul class="footer-nav">
+                <li>
+                  <a href="ico-funding.html#tab-campaign">Campaign</a>
+                </li>
+                <li>
+                  <a href="ico-funding.html#tab-faqs">FAQs</a>
+                </li>
+                <li>
+                  <a href="ico-funding.html#tab-update">Update</a>
+                </li>
+              </ul>
+              <!-- End of .footer-nav -->
+            </div>
+            <!-- End of .col -->
+
+            <div class="col-md">
+              <h5>Help</h5>
+              <ul class="footer-nav">
+                <li>
+                  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="privacy-policy.html">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+              <!-- End of .footer-nav -->
+            </div>
+            <!-- End of .col -->
+
+            <div class="col-md-4">
+              <h5>Newsletter</h5>
+              <p>Sign up for our exclusive weekly newsletter.</p>
+              <form class="footer-form" action="#" method="post">
+                <input type="email" class="form-control" placeholder="Enter email address" />
+                <button class="icon-btn" type="submit">
+                  <i class="icon-arrow-right-1"></i>
+                </button>
+              </form>
+
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.pinterest.com" target="_blank" rel="noopener">
+                  <i class="fab fa-pinterest-p"></i>
+                </a>
+              </div>
+              <!-- End of .social-icons -->
+            </div>
+            <!-- End of .col -->
+          </div>
+          <!-- End of .row -->
+        </div>
+        <!-- End of .footer-menu -->
+
+        <div class="footer-bottom">
+          <p>
+            Copyright &copy; 2018. All rights reserved by
+            <a href="#">Your Company</a>
+          </p>
+          <div class="dropdown text-xs-right ml-auto">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Language:
+              <span>English</span>
+              <i class="fa fa-angle-up"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">English US</a>
+              <a class="dropdown-item" href="#">English Uk</a>
+              <a class="dropdown-item" href="#">French</a>
+              <a class="dropdown-item" href="#">Bangla</a>
+            </div>
+            <!-- End of .dropdown-menu -->
+          </div>
+          <!-- End of .dropdown -->
+        </div>
+        <!-- End of .footer-copyright -->
+      </div>
+      <!-- End of .page-footer -->
+    </div>
+    <!-- End of .container -->
+  </footer>
+  <!-- End of page-footer -->
+
+  <!-- Javascripts
+    ======================================= -->
+  <!-- jQuery -->
+  <script src="/js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="/js/vendor/jquery-migrate.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="/js/vendor/fontawesome-all.min.js"></script>
+  <!-- jQuery Countdown plugin -->
+  <script src="/js/vendor/jquery.countdown.min.js"></script>
+  <!-- jQuery Easing Plugin -->
+  <script src="/js/vendor/easing-1.3.js"></script>
+  <!-- jQuery progressbar plugin -->
+  <script src="/js/vendor/jquery.waypoints.min.js"></script>
+  <!-- Bootstrap Progressbar -->
+  <script src="/js/vendor/bootstrap-progressbar.min.js"></script>
+  <!-- ImagesLoaded js -->
+  <script src="/js/vendor/imagesloaded.pkgd.min.js"></script>
+  <!-- Slick carousel js -->
+  <script src="/js/vendor/slick.min.js"></script>
+  <!-- Magnific popup -->
+  <script src="/js/vendor/jquery.magnific-popup.min.js"></script>
+
+  <!-- pie chart -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <!-- Custom js -->
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

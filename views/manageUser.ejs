@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:23 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="/css/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/css/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/css/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" herf="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css
+    https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" herf="<link rel=" stylesheet"
+        herf="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+</head>
+
+
+<body data-sidebar="dark" onload="fetchUserList()">
+
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+
+        <%-include('header')-%>
+
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <%-include('sidebar')-%>
+                        <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+
+
+
+
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <h4>Manage User</h4>
+                                    <ol class="breadcrumb m-0">
+
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Manage User</a></li>
+                                        <li class="breadcrumb-item active">Manage User</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" id="userModalBody">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="userRefModal" tabindex="-1" role="dialog"
+                            aria-labelledby="userRefModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <button type="button" class="btn btn-danger" onclick="closeuserRefModal()"
+                                            aria-hidden="true"><i class="fas fa-times"></i></button>
+                                        <h4 class="modal-title" id="myModalLabel">More about</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+
+                                            <div class="col-12">
+
+
+                                                <div class="table-responsive">
+                                                    <table style="width:100%;overflow-x: hidden;" id="userRefList"
+                                                        class="table align-middle table-centered table-vertical table-nowrap mb-1">
+
+                                                        <thead>
+                                                            <tr>
+
+                                                                <th>
+                                                                    Name
+                                                                    <i class="fas fa-sort"></i>
+                                                                </th>
+                                                                <th>
+                                                                    Email
+                                                                </th>
+                                                                <th>
+                                                                    Mobile
+                                                                </th>
+                                                                <th>
+                                                                    Gen1
+
+                                                                </th>
+                                                                <th>
+                                                                    Gen2to5
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">User List</h4>
+                                        <!-- <div>
+                                        <input class="form-control  float left" type="text" placeholder="" name="" id="param1">
+
+                                    </div> -->
+                                        <div class="table-responsive">
+                                            <table style="width:100%;overflow-x: hidden;" id="userList"
+                                                class="table align-middle table-centered table-vertical table-nowrap mb-1">
+
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>
+                                                            Name
+                                                            <i class="fas fa-sort"></i>
+                                                        </th>
+                                                        <th>
+                                                            Email
+                                                        </th>
+                                                        <th>
+                                                            Mobile
+                                                        </th>
+                                                        <th>
+                                                            Gen1 Referals
+
+                                                        </th>
+                                                        <th>
+                                                            Gen2to5 Referals
+                                                        </th>
+
+                                                        <th>
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+
+
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+            </div>
+            <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <!-- Right bar overlay-->
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/libs/jquery/jquery.min.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="/js/vendor/fontawesome-all.min.js"></script>
+    <!--Morris Chart-->
+    <script src="/assets/libs/morris.js/morris.min.js"></script>
+    <script src="/assets/libs/raphael/raphael.min.js"></script>
+
+    <script src="/assets/js/pages/dashboard.init.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+
+    <!-- DataTables
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
+<!-- DataTables -->
+    <!-- <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script> -->
+    <script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <!-- 
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+
+
+
+
+
+    <script>
+
+        function fetchUserList() {
+
+
+            $.ajax({
+                url: '/admin/fetchUserList',
+                method: 'get',
+                success: function (data) {
+
+
+                    console.log(data)
+                    $('#userList').DataTable({
+
+
+                        data: data,
+                        'columns': [
+
+
+                            {
+                                'data': 'TUM_User_Name'
+
+                            }, {
+                                'data': 'TUM_User_Email'
+                            },
+                            {
+                                'data': 'TUM_User_Mobile'
+                            }, {
+                                'data': 'gen1'
+                            }, {
+                                'data': 'gen2to5'
+                            }, {
+                                'data': 'action'
+                            }
+
+                        ]
+
+                    })
+
+
+                },
+                error: function (e) {
+                    console.log(e)
+                }
+            })
+
+
+
+
+        }
+
+
+        function closeUserModal() {
+
+            table = $('#userRefList').DataTable({
+                paging: false,
+                searching: false
+            });
+
+            table.destroy();
+
+            $('#userModal').modal('hide')
+        }
+        function viewUser(id) {
+            $.ajax({
+                url: '/admin/fetch_userdetailsbyid?id=' + id,
+                method: 'get',
+                success: function (res) {
+
+                    console.log(res)
+                    $('#userModal').modal('show');
+                    $('#userModalBody').html('')
+                    $('#userModalBody').html(`
+                
+                
+                <div class="modal-header">
+                                    <button type="button" class="btn btn-danger" onclick="closeUserModal()" aria-hidden="true"><i class="fas fa-times"></i></button>
+                                    <h4 class="modal-title" id="myModalLabel">More about ${res[0].username}</h4>
+                                    </div>
+                                <div class="modal-body" >
+                                    <center>
+                                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                                    <h3 class="media-heading">${res[0].username} </h3>
+                                    <span class="label label-warning">${res[0].useremail}</span><br>
+                                    <span class="label label-warning">${res[0].usermobile}</span><br>
+                                    <hr>
+                                    <center>
+                                    <p class="text-left"><strong>Address </strong><br>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <table>
+                                                    <tr>
+                                                        <th>State:</th>
+                                                        <td>${res[0].userstate}</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <th>Distrist:</th>
+                                                        <td>${res[0].userdist}</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <th>Constituency:</th>
+                                                        <td>${res[0].userconst}</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <th>PIN:</th>
+                                                        <td>${res[0].userpin}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            
+                                            </div>
+                                    <br>
+                                    </center>
+                                </div>
+                                <div class="modal-footer">
+                                    <center>
+                                    <button type="button" onclick="fetch_refDetailsById(${res[0].userid})" class="btn btn-default" data-dismiss="modal">Click here to see Referals by ${res[0].username} </button>
+                                    </center>
+                                </div>
+                
+                
+                
+                `)
+
+
+
+                },
+                error: function (e) {
+                    console.log(e)
+                }
+            })
+
+
+
+
+        }
+
+
+        function fetch_refDetailsById(id) {
+
+            $.ajax({
+                url: '/admin/fetch_refDetailsById?id=' + id,
+                method: 'get',
+                success: function (res) {
+                    console.log(res)
+                    $('#userRefModal').modal('show');
+                    $('#userRefList').DataTable({
+                        paging: false,
+                        searching: false,
+
+                        data: res,
+                        'columns': [
+
+
+                            {
+                                'data': 'username'
+
+                            }, {
+                                'data': 'useremail'
+                            },
+                            {
+                                'data': 'usermobile'
+                            }, {
+                                'data': 'gen1'
+                            }, {
+                                'data': 'gen2to5'
+                            }
+
+                        ]
+
+                    })
+
+
+                },
+                error: function (e) {
+                    console.log(e)
+                }
+            })
+
+
+
+        }
+        function closeuserRefModal() {
+            $('#userRefModal').modal('hide');
+        }
+        function deleteUser(id) {
+            $.ajax({
+                url: '/admin/deleteUserById?id=' + id,
+                method: 'get',
+                success: function (res) {
+                    location.reload();
+
+
+
+                },
+                error: function (e) {
+                    console.log(e)
+                }
+            })
+
+        }
+
+
+
+ //    function deleteBlog(id){ 
+ //     $.ajax({
+ //             url: '/admin/deleteBlog?id='+id,
+ //             method: 'get',
+ //             success: function (res) {
+
+
+ //                 console.log(res)
+ //             }
+ //         })
+
+ //     }
+
+     //Method For Searching Records In The List
+     // function searchData() {
+     //     $('#listAllCostCenter').DataTable().draw();
+     // }
+
+
+    </script>
+
+
+</body>
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:47 GMT -->
+
+</html>

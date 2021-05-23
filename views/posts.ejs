@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:23 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="/css/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link herf="/assets/css/icons.min.css" rel="stylesheet" />
+    <!-- App Css-->
+    <link href="/css/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- <link herf="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"
+        type="text/css"> -->
+
+
+    <!-- <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -75px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style> -->
+
+
+
+
+</head>
+
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <%-include('header')-%>
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Main</li>
+
+                            <li>
+                                <a href="/user/dashboard" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                   
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/user/blog" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    
+                                    <span>Blogs</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+
+                        <header class="masthead">
+                            <div class="container position-relative px-4 px-lg-5">
+                                <div class="row gx-4 gx-lg-5 justify-content-center">
+                                    <div class="col-md-10 col-lg-8 col-xl-7">
+                                        <div class="post-heading">
+                                            <h1><%-blog[0].blog_Title %></h1>
+                                            
+                                            <span class="meta">
+                                                Posted by
+                                                <a href="#!">Admin</a>
+                                                on <%-blog[0].CreatedOn %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <!-- Post Content-->
+                        <article class="mb-4">
+                            <div class="container px-4 px-lg-5">
+                                <div class="row gx-4 gx-lg-5 justify-content-center">
+                                    <div class="col-md-10 col-lg-8 col-xl-7">
+                                        <%-blog[0].blog_Content %>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Footer-->
+                        
+                    <!-- End Page-content -->
+                </div>
+
+                <!-- <div class="col-4">
+                    klsdfiusdfigu
+                </div> -->
+            </div>
+
+            <footer class="border-top">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item">
+                                    <a href="#!">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#!">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#!">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </footer>
+                    <%-include('footer')-%>
+                        
+                
+                <!-- end main content-->
+                    </div>
+            </div>
+            <!-- END layout-wrapper -->
+
+            <!-- Right Sidebar -->
+            
+            <!-- /Right-bar -->
+
+
+
+
+
+            <!-- Right bar overlay-->
+            
+
+
+            <script src="/js/vendor/fontawesome-all.min.js"></script>
+            <!-- JAVASCRIPT -->
+            <script src="/assets/libs/jquery/jquery.min.js"></script>
+            <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+            <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="/assets/libs/node-waves/waves.min.js"></script>
+            <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+            <!--Morris Chart-->
+            <!-- <script src="/assets/libs/morris.js/morris.min.js"></script>
+            <script src="/assets/libs/raphael/raphael.min.js"></script> -->
+
+            <!-- <script src="/assets/js/pages/dashboard.init.js"></script> -->
+
+            <script src="/assets/js/app.js"></script>
+
+<!-- 
+            <script>
+                function myFunction() {
+                  var copyText = document.getElementById("myInput");
+                  copyText.select();
+                  copyText.setSelectionRange(0, 99999);
+                  document.execCommand("copy");
+                  
+                  var tooltip = document.getElementById("myTooltip");
+                  tooltip.innerHTML = "Copied"
+                }
+                
+                function outFunc() {
+                  var tooltip = document.getElementById("myTooltip");
+                  tooltip.innerHTML = "Copy to clipboard";
+                }
+                </script> -->
+
+
+                <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+
+                <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    
+    
+                <script>
+
+$(document).ready(function(){
+                   
+    
+                    $("#share").jsSocials({
+                        text: 'Sign Up on KARWAT click here',
+                        url: $('#linkShare').attr('href'),
+                        
+                        showLabel: false,
+                        showCount: 'inside',
+                        shares: ["email", "twitter", "facebook", "linkedin", "whatsapp"]
+            
+                    });
+                })
+            
+                </script>
+
+
+
+<script>
+
+    $.ajax({
+        url:'/common/fetchBlogList',
+        method:'get',
+        success: function(res){
+            console.log(res)
+            if(res.length>0){
+                for(i=0;i<res.length;i++){
+                    $('#Bloghcontent').html('')
+                    $('#Bloghcontent').append(`<div class="post-preview">
+                                            <a href="/common/posts?id=${res[i].blog_id}">
+                                                <h2 class="post-title">${res[i].blog_Title}</h2>
+                                    
+                                            </a>
+                                            <p class="post-meta">
+                                                Posted by
+                                                <a href="#!">Start Bootstrap</a>
+                                                on September 24, 2021
+                                            </p>
+                                        </div>
+                                        <!-- Divider-->
+                                        <hr class="my-4" />`)
+                }
+            }
+        }
+    })
+</script>
+</body>
+
+
+<!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:47 GMT -->
+
+</html>
