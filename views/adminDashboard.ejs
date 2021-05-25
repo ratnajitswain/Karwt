@@ -1,34 +1,36 @@
 <!doctype html>
 <html lang="en">
 
-    
+
 <!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:23 GMT -->
+
 <head>
 
-        <meta charset="utf-8" />
-        <title>Dashboard | Lexa - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <link rel="shortcut icon" src="/images/favicon.ico">
+    <meta charset="utf-8" />
+    <title>Dashboard | Lexa - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" src="/images/favicon.ico">
 
-        <!-- Bootstrap Css -->
-        <link herf="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet"/>
-        <!-- Icons Css -->
-        <link herf="/assets/css/icons.min.css" rel="stylesheet" />
-        <!-- App Css-->
-        <link herf="/assets/css/app.min.css" id="app-style" rel="stylesheet" />
-
-    </head>
-
+    <!-- Bootstrap Css -->
+    <link herf="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" />
+    <!-- Icons Css -->
+    <link herf="/assets/css/icons.min.css" rel="stylesheet" />
+    <!-- App Css-->
+    <link herf="/assets/css/app.min.css" id="app-style" rel="stylesheet" />
     
-    <body data-sidebar="dark">
+
+</head>
+
+
+<body data-sidebar="dark">
 
     <!-- <body data-layout="horizontal" data-topbar="colored"> -->
 
-        <!-- Begin page -->
-        <div id="layout-wrapper">
-            <%-include('header')-%>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <%-include('header')-%>
             <!-- ========== Left Sidebar Start ========== -->
             <div class="vertical-menu">
 
@@ -36,12 +38,12 @@
 
                     <!--- Sidemenu -->
                     <%-include('sidebar')-%>
-                    <!-- Sidebar -->
+                        <!-- Sidebar -->
                 </div>
             </div>
             <!-- Left Sidebar End -->
 
-            
+
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -55,14 +57,14 @@
                             <div class="col-sm-6">
                                 <div class="page-title-box">
                                     <h4>Dashboard</h4>
-                                        <ol class="breadcrumb m-0">
-                                            
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
-                                        </ol>
+                                    <ol class="breadcrumb m-0">
+
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
                                 </div>
                             </div>
-                         
+
                         </div>
                         <!-- end page title -->
 
@@ -74,9 +76,12 @@
                                             <i class="mdi mdi-cube-outline float-end"></i>
                                         </div>
                                         <div class="text-white">
-                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Registered Users</h6>
-                                            <h2 class="mb-4 text-white"><%-totalUsers[0]%></h2>
-                                            
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Registered
+                                                Users</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%-totalUsers[0]%>
+                                            </h2>
+
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +93,8 @@
                                             <i class="mdi mdi-buffer float-end"></i>
                                         </div>
                                         <div class="text-white">
-                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Estimated Calculation</h6>
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Estimated
+                                                Calculation</h6>
                                             <h2 class="mb-4 text-white">1,5877</h2>
                                         </div>
                                     </div>
@@ -101,8 +107,11 @@
                                             <i class="mdi mdi-tag-text-outline float-end"></i>
                                         </div>
                                         <div class="text-white">
-                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total User Referal Urls</h6>
-                                            <h2 class="mb-4 text-white"><%-totalUsers[0]%></h2>
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total User Referal
+                                                Urls</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%-totalUsers[0]%>
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
@@ -114,8 +123,11 @@
                                             <i class="mdi mdi-briefcase-check float-end"></i>
                                         </div>
                                         <div class="text-white">
-                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Registered today</h6>
-                                            <h2 class="mb-4 text-white"><%- todayRegistered[0] %></h2>
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Registered
+                                                today</h6>
+                                            <h2 class="mb-4 text-white">
+                                                <%- todayRegistered[0] %>
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
@@ -130,19 +142,20 @@
                                     <div class="card-body">
                                         <h4 class="card-title mb-4">DAILY USERS CHART</h4>
 
-                                        
 
-                                        <div id="morris-area-example" class="morris-charts morris-charts-height" dir="ltr"></div>
+
+                                        <div id="morris-area-example" class="morris-charts morris-charts-height"
+                                            dir="ltr"></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-xl-3">
-                            
+
                             </div>
 
                         </div>
-                        
+
                         <!-- end row -->
 
 
@@ -150,84 +163,87 @@
                     <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-            
+
                 <%-include('footer')-%>
-            </div>            
+            </div>
             <!-- end main content-->
 
-        </div>
-        <!-- END layout-wrapper -->
+    </div>
+    <!-- END layout-wrapper -->
 
-        <!-- Right Sidebar -->
-        <div class="right-bar">
-            <div data-simplebar class="h-100">
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
 
-                <div class="rightbar-title d-flex align-items-center px-3 py-4">
-            
-                    <h5 class="m-0 me-2">Settings</h5>
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
 
-                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+            <h6 class="text-center mb-0">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
                 </div>
 
-                <!-- Settings -->
-                <hr class="mt-0" />
-                <h6 class="text-center mb-0">Choose Layouts</h6>
-
-                <div class="p-4">
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="form-check form-switch mb-3">
-                        <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
-                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="form-check form-switch mb-3">
-                        <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
-                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="form-check form-switch mb-5">
-                        <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
-                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
-                    </div>
-
-            
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
+                        data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
                 </div>
 
-            </div> <!-- end slimscroll-menu-->
-        </div>
-        <!-- /Right-bar -->
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch"
+                        data-appStyle="assets/css/app-rtl.min.css" />
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
 
-        <!-- Right bar overlay-->
-        <div class="rightbar-overlay"></div>
 
-        <!-- JAVASCRIPT -->
-        <script src="/assets/libs/jquery/jquery.min.js"></script>
-        <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="/assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="/assets/libs/node-waves/waves.min.js"></script>
-        <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+            </div>
 
-        <!--Morris Chart-->
-        <!-- <script src="/assets/libs/morris.js/morris.min.js"></script> -->
-        <script src="/assets/libs/raphael/raphael.min.js"></script>
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
 
-        <script src="/assets/js/pages/dashboard.init.js"></script>
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
 
-        <script src="/assets/js/app.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="/assets/libs/jquery/jquery.min.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-    </body>
+    <!--Morris Chart-->
+    <!-- <script src="/assets/libs/morris.js/morris.min.js"></script> -->
+    <script src="/assets/libs/raphael/raphael.min.js"></script>
+
+    <script src="/assets/js/pages/dashboard.init.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+
+</body>
 
 
 <!-- Mirrored from themesbrand.com/lexa/layouts/purple/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Apr 2021 13:20:47 GMT -->
+
 </html>

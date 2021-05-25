@@ -36,8 +36,8 @@ $.ajax({
                       <div class="col-12">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs col-12" >
-                          <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                          <li><a href="#Registration" data-toggle="tab">Sign Up</a></li>
+                          <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>&nbsp&nbsp
+                          <li><a href="#Registration" data-toggle="tab">Sign Up</a></li>&nbsp&nbsp
                            <li><a href="#VRegistration" data-toggle="tab">Vendor Registration</a></li>
                         </ul>
                         <!-- Tab panes -->
